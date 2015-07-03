@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.EditText;
-
+import android.widget.DatePicker;
 
 public class InputActivity extends Activity {
     public final static String EXTRA_MESSAGE = "com.example.manaita.familytree.PERSON";
@@ -44,16 +44,18 @@ public class InputActivity extends Activity {
         EditText fN = (EditText)findViewById(R.id.fName);
         EditText n = (EditText)findViewById(R.id.name);
         EditText p = (EditText)findViewById(R.id.parent);
-        EditText y = (EditText)findViewById(R.id.year);
-        EditText m = (EditText)findViewById(R.id.month);
-        EditText d = (EditText)findViewById(R.id.day);
+
         String fName = fN.getText().toString();
         String name = n.getText().toString();
         String parent = p.getText().toString();
-        String year = y.getText().toString();
-        String month = m.getText().toString();
-        String day = d.getText().toString();
-        Data data = new Data(fName,name,parent,Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
+
+        DatePicker datePicker = (DatePicker)findViewById(R.id.birth);
+        int year = datePicker.getYear();
+        int month = datePicker.getMonth();
+        int day = datePicker.getDayOfMonth();
+
+
+        Data data = new Data(fName,name,parent,year,month,day);
         intent.putExtra(EXTRA_MESSAGE, data);
         startActivity(intent);
     }
