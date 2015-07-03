@@ -23,7 +23,7 @@ public class DisplayActivity extends Activity {
         name.setTextSize(20);
         name.setText(data.getName());
         //setContentView(R.id.container);
-        //setContentView(name);
+        setContentView(name);
     }
 
 
