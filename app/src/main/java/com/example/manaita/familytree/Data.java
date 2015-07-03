@@ -1,6 +1,10 @@
 package com.example.manaita.familytree;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by tazio on 2015/07/02.
  */
@@ -17,7 +21,7 @@ public class Data implements Serializable {
     private boolean gender;
     private boolean isAdopted;
 
-    public Data(String fName, String name, String parent){
+    public Data(String fName, String name, String parent,int year,int mouth,int day){
         this.fName = fName;
         this.name = name;
         this.parent = parent;
@@ -48,4 +52,26 @@ public class Data implements Serializable {
     public void setDay(int day){ this.day = day; }
     public void setMale(boolean male){ this.gender = male; }
     public void setAdopted(boolean isAdopted){ this.isAdopted = isAdopted; }
+    public String getToday(){
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+        Calendar cal = Calendar.getInstance();
+        String today = fmt.format(cal.getTime());
+        return today;
+    }
+    public int setAge(int year,int month,int day){
+        Calendar cal = Calendar.getInstance();
+        cal.set(year,month,day);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        int k = 20140703;
+        int now = Integer.parseInt(sdf.format(new Date()));
+        int b = Integer.parseInt(sdf.format(cal.getTime()));
+        return (now-b)/10000;
+    }
+    public int getAge(){
+        int y = getYear();
+        int m = getMonth();
+        int d = getDay();
+        int a = setAge(y,m,d);
+        return a;
+    }
 }

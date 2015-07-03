@@ -44,10 +44,16 @@ public class InputActivity extends Activity {
         EditText fN = (EditText)findViewById(R.id.fName);
         EditText n = (EditText)findViewById(R.id.name);
         EditText p = (EditText)findViewById(R.id.parent);
+        EditText y = (EditText)findViewById(R.id.year);
+        EditText m = (EditText)findViewById(R.id.month);
+        EditText d = (EditText)findViewById(R.id.day);
         String fName = fN.getText().toString();
         String name = n.getText().toString();
         String parent = p.getText().toString();
-        Data data = new Data(fName,name,parent);
+        String year = y.getText().toString();
+        String month = m.getText().toString();
+        String day = d.getText().toString();
+        Data data = new Data(fName,name,parent,Integer.parseInt(year),Integer.parseInt(month),Integer.parseInt(day));
         intent.putExtra(EXTRA_MESSAGE, data);
         startActivity(intent);
     }

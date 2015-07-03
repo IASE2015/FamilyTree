@@ -7,9 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.view.ViewGroup;
-
+import java.text.SimpleDateFormat;
+//import java.time.LocalDate;
 
 public class DisplayActivity extends Activity {
+    int y,m,d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +19,29 @@ public class DisplayActivity extends Activity {
         setContentView(R.layout.activity_display);
         Intent intent = getIntent();
         Data data = (Data)intent.getSerializableExtra(InputActivity.EXTRA_MESSAGE);
-        //ViewGroup p = new ViewGroup();
+        // ViewGroup p = new ViewGroup();
+
+
+
         TextView fName = new TextView(this);
         TextView name = new TextView(this);
         fName.setTextSize(40);
         fName.setText(data.getFName());
         name.setTextSize(20);
         name.setText(data.getName());
+
+
+        TextView b = new TextView(this);
+        b.setTextSize(20);
+        Integer bi  = new Integer(data.getAge()-1);
+        String bit = bi.toString();
+        b.setText(bit);
+
+
         //setContentView(R.id.container);
-        setContentView(name);
+
+        setContentView(b);
+
     }
 
 
@@ -50,13 +66,4 @@ public class DisplayActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    /*public static class PlaceholderFragment extends Fragment {
-        public PlaceholderFragment(){
-        }
-        @Override
-        public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
-            View rootView = inflater.inflate(R.layout.activity_display,container,false);
-            return rootView;
-        }
-    }*/
 }
