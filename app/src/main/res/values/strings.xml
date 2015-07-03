@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FamilyTree</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">こんにちは！\n情報を入力してください！\n</string>
+    <string name="fName">苗字:\n</string>
+    <string name="your_name">名前:\n</string>
+    <string name="parent">両親:\n</string>
+    <string name="number">\n第何子:\n</string>
+    <string name="birth">\n生年月日:\n</string>
+    <string name="family_name">苗字</string>
+    <string name="name">名前</string>
+    <string name="parent_name">\n親の名前</string>
+    <string name="order">\n第何子ですか</string>
+    <string name="year">\n年\n</string>
+    <string name="month">\n月\n</string>
+    <string name="day">\n日\n</string>
+    <string name="button_send">\nSend\n</string>
+    <string name="title_activity_display">DisplayActivity</string>
+
+</resources>
