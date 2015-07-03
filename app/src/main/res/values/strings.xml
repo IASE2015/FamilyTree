@@ -17,6 +17,9 @@
     <string name="year">\n年\n</string>
     <string name="month">\n月\n</string>
     <string name="day">\n日\n</string>
+    <string name="gender">\n性別:\n</string>
+    <string name="gender_male">男性</string>
+    <string name="gender_female">女性</string>
     <string name="button_send">\nSend\n</string>
     <string name="title_activity_display">DisplayActivity</string>
 
