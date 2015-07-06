@@ -21,6 +21,8 @@ public class Data implements Serializable {
     private boolean gender;
     private boolean isAdopted;
 
+    Calendar cal = Calendar.getInstance();
+
     public Data(String fName, String name, String parent,int year,int mouth,int day){
         this.fName = fName;
         this.name = name;
@@ -52,17 +54,20 @@ public class Data implements Serializable {
     public void setDay(int day){ this.day = day; }
     public void setMale(boolean male){ this.gender = male; }
     public void setAdopted(boolean isAdopted){ this.isAdopted = isAdopted; }
-    public String getToday(){
-        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
-        Calendar cal = Calendar.getInstance();
-        String today = fmt.format(cal.getTime());
-        return today;
+
+    public String getNowMonth(){
+        SimpleDateFormat sdfM = new SimpleDateFormat("MM");
+        String nowMonth = sdfM.format(cal.getTime());
+        return nowMonth;
+    }
+    public String getNowDay(){
+        SimpleDateFormat sdfD = new SimpleDateFormat("dd");
+        String nowDay = sdfD.format(cal.getTime());
+        return nowDay;
     }
     public int setAge(int year,int month,int day){
-        Calendar cal = Calendar.getInstance();
         cal.set(year,month,day);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        int k = 20140703;
         int now = Integer.parseInt(sdf.format(new Date()));
         int b = Integer.parseInt(sdf.format(cal.getTime()));
         return (now-b)/10000;

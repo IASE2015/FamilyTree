@@ -30,12 +30,11 @@ public class DisplayActivity extends Activity {
         name.setTextSize(20);
         name.setText(data.getName());
 
-
         TextView b = new TextView(this);
         b.setTextSize(20);
-        int age=0;
-        if(data.getMonth()<=data.getNowMonth() && data.getDay()<=data.getNowDay()){
-            age=data.getAge()+1;
+        int age = data.getAge();
+        if(data.getdata.getMonth()<=Integer.parseInt(data.getNowMonth()) && data.getDay()<=Integer.parseInt(data.getNowDay())){
+            age += 1;
         }
         Integer bi  = new Integer(age);
         String bit = bi.toString();
