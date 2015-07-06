@@ -33,7 +33,7 @@ public class DisplayActivity extends Activity {
         TextView b = new TextView(this);
         b.setTextSize(20);
         int age = data.getAge();
-        if(data.getdata.getMonth()<=Integer.parseInt(data.getNowMonth()) && data.getDay()<=Integer.parseInt(data.getNowDay())){
+        if(data.getMonth()<=Integer.parseInt(data.getNowMonth()) && data.getDay()<=Integer.parseInt(data.getNowDay())){
             age += 1;
         }
         Integer bi  = new Integer(age);
