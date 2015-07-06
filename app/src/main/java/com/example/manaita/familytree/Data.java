@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import android.util.Log;
 
 /**
  * Created by tazio on 2015/07/02.
@@ -21,9 +22,9 @@ public class Data implements Serializable {
     private boolean gender;
     private boolean isAdopted;
 
-    Calendar cal = Calendar.getInstance();
 
-    public Data(String fName, String name, String parent,int year,int mouth,int day){
+
+    public Data(String fName, String name, String parent,int year,int month,int day){
         this.fName = fName;
         this.name = name;
         this.parent = parent;
@@ -57,20 +58,31 @@ public class Data implements Serializable {
 
     public String getNowMonth(){
         SimpleDateFormat sdfM = new SimpleDateFormat("MM");
+        Calendar cal = Calendar.getInstance();
         String nowMonth = sdfM.format(cal.getTime());
         return nowMonth;
     }
     public String getNowDay(){
         SimpleDateFormat sdfD = new SimpleDateFormat("dd");
+        Calendar cal = Calendar.getInstance();
         String nowDay = sdfD.format(cal.getTime());
         return nowDay;
     }
+    public int getNowYear(){
+        SimpleDateFormat sdfY = new SimpleDateFormat("yyyy");
+        Calendar cal = Calendar.getInstance();
+        String nowYear = sdfY.format(cal.getTime());
+        int y = Integer.valueOf(nowYear);
+        return y;
+    }
     public int setAge(int year,int month,int day){
+        Calendar cal = Calendar.getInstance();
         cal.set(year,month,day);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         int now = Integer.parseInt(sdf.format(new Date()));
         int b = Integer.parseInt(sdf.format(cal.getTime()));
-        return (now-b)/10000;
+        int age = (now-b)/10000;
+        return age;
     }
     public int getAge(){
         int y = getYear();

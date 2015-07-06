@@ -2,6 +2,7 @@ package com.example.manaita.familytree;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,7 +52,7 @@ public class InputActivity extends Activity {
 
         DatePicker datePicker = (DatePicker)findViewById(R.id.birth);
         int year = datePicker.getYear();
-        int month = datePicker.getMonth();
+        int month = datePicker.getMonth()+1;
         int day = datePicker.getDayOfMonth();
 
 

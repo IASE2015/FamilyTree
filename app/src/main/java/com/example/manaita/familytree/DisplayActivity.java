@@ -3,6 +3,7 @@ package com.example.manaita.familytree;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -29,14 +30,19 @@ public class DisplayActivity extends Activity {
         fName.setText(data.getFName());
         name.setTextSize(20);
         name.setText(data.getName());
+        TextView bir = new TextView(this);
+        bir.setTextSize(40);
+        bir.setText(String.valueOf(data.getMonth()));
 
         TextView b = new TextView(this);
         b.setTextSize(20);
         int age = data.getAge();
         if(data.getMonth()<=Integer.parseInt(data.getNowMonth()) && data.getDay()<=Integer.parseInt(data.getNowDay())){
             age += 1;
+            if(data.getYear()==data.getNowYear()){ age = 0;}
         }
-        Integer bi  = new Integer(age);
+
+        Integer bi  = Integer.valueOf(age);
         String bit = bi.toString();
         b.setText(bit);
 
