@@ -33,7 +33,11 @@ public class DisplayActivity extends Activity {
 
         TextView b = new TextView(this);
         b.setTextSize(20);
-        Integer bi  = new Integer(data.getAge()-1);
+        int age=0;
+        if(data.getMonth()<=data.getNowMonth() && data.getDay()<=data.getNowDay()){
+            age=data.getAge()+1;
+        }
+        Integer bi  = new Integer(age);
         String bit = bi.toString();
         b.setText(bit);
 
