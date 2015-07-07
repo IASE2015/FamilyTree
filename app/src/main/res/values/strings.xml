@@ -8,12 +8,12 @@
     <string name="fName">苗字:\n</string>
     <string name="your_name">名前:\n</string>
     <string name="parent">両親:\n</string>
-    <string name="number">\n第何子:\n</string>
+    <string name="number">第何子:\n</string>
     <string name="birth">\n生年月日:\n</string>
     <string name="family_name">苗字</string>
     <string name="name">名前</string>
-    <string name="parent_name">\n親の名前</string>
-    <string name="order">\n第何子ですか</string>
+    <string name="parent_name">親の名前</string>
+    <string name="order">第何子ですか</string>
     <string name="year">\n年\n</string>
     <string name="month">\n月\n</string>
     <string name="day">\n日\n</string>

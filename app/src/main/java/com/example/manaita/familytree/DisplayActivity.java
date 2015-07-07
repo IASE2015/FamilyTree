@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 //import java.time.LocalDate;
 
 public class DisplayActivity extends Activity {
@@ -38,7 +39,7 @@ public class DisplayActivity extends Activity {
 
         int add = 0;
         int age = data.getAge();
-        if(data.getMonth()<=data.getNowMonth() || data.getDay()<=data.getNowDay()){
+        if(data.getMonth()<=getNowMD() || data.getDay()<=getNowMD()){
             add = 1;
             //if(data.getMonth()==data.getNowMonth() )add = 0;
 
@@ -77,5 +78,12 @@ public class DisplayActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public int getNowMD(){
+        SimpleDateFormat sdfD = new SimpleDateFormat("MMdd");
+        Calendar cal = Calendar.getInstance();
+        String nowMD= sdfD.format(cal.getTime());
+        int md = Integer.valueOf(nowMD);
+        return md;
     }
 }
