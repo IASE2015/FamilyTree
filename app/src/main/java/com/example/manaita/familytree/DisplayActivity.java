@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.view.ViewGroup;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-//import java.time.LocalDate;
 
 public class DisplayActivity extends Activity {
 
@@ -37,16 +36,9 @@ public class DisplayActivity extends Activity {
         TextView b = new TextView(this);
         b.setTextSize(20);
 
-        int add = 0;
         int age = data.getAge();
-        if(data.getMonth()<=getNowMD() || data.getDay()<=getNowMD()){
-            add = 1;
-            //if(data.getMonth()==data.getNowMonth() )add = 0;
 
-        }
-        if(data.getYear()==data.getNowYear()){ add = 0;}
-
-        Integer bi  = Integer.valueOf(age+add);
+        Integer bi  = Integer.valueOf(age);
         String bit = bi.toString();
         b.setText(bit);
 
@@ -83,7 +75,7 @@ public class DisplayActivity extends Activity {
         SimpleDateFormat sdfD = new SimpleDateFormat("MMdd");
         Calendar cal = Calendar.getInstance();
         String nowMD= sdfD.format(cal.getTime());
-        int md = Integer.valueOf(nowMD+100);
+        int md = Integer.valueOf(nowMD);
         return md;
     }
 }
