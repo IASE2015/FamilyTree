@@ -56,17 +56,19 @@ public class Data implements Serializable {
     public void setMale(boolean male){ this.gender = male; }
     public void setAdopted(boolean isAdopted){ this.isAdopted = isAdopted; }
 
-    public String getNowMonth(){
+    public int getNowMonth(){
         SimpleDateFormat sdfM = new SimpleDateFormat("MM");
         Calendar cal = Calendar.getInstance();
         String nowMonth = sdfM.format(cal.getTime());
-        return nowMonth;
+        int m = Integer.valueOf(nowMonth)+1;
+        return m;
     }
-    public String getNowDay(){
+    public int getNowDay(){
         SimpleDateFormat sdfD = new SimpleDateFormat("dd");
         Calendar cal = Calendar.getInstance();
         String nowDay = sdfD.format(cal.getTime());
-        return nowDay;
+        int d = Integer.valueOf(nowDay);
+        return d;
     }
     public int getNowYear(){
         SimpleDateFormat sdfY = new SimpleDateFormat("yyyy");

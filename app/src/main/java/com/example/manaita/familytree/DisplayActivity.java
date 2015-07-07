@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 //import java.time.LocalDate;
 
 public class DisplayActivity extends Activity {
-    int y,m,d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +35,17 @@ public class DisplayActivity extends Activity {
 
         TextView b = new TextView(this);
         b.setTextSize(20);
-        int age = data.getAge();
-        if(data.getMonth()<=Integer.parseInt(data.getNowMonth()) && data.getDay()<=Integer.parseInt(data.getNowDay())){
-            age += 1;
-            if(data.getYear()==data.getNowYear()){ age = 0;}
-        }
 
-        Integer bi  = Integer.valueOf(age);
+        int add = 0;
+        int age = data.getAge();
+        if(data.getMonth()<=data.getNowMonth() || data.getDay()<=data.getNowDay()){
+            add = 1;
+            //if(data.getMonth()==data.getNowMonth() )add = 0;
+
+        }
+        if(data.getYear()==data.getNowYear()){ add = 0;}
+
+        Integer bi  = Integer.valueOf(age+add);
         String bit = bi.toString();
         b.setText(bit);
 
