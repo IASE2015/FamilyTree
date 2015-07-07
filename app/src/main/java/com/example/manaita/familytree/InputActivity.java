@@ -52,7 +52,7 @@ public class InputActivity extends Activity {
 
         DatePicker datePicker = (DatePicker)findViewById(R.id.birth);
         int year = datePicker.getYear();
-        int month = datePicker.getMonth()+1;
+        int month = datePicker.getMonth();
         int day = datePicker.getDayOfMonth();
 
 

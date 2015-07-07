@@ -3,7 +3,6 @@ package com.example.manaita.familytree;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import android.util.Log;
 
 /**
@@ -56,20 +55,6 @@ public class Data implements Serializable {
     public void setMale(boolean male){ this.gender = male; }
     public void setAdopted(boolean isAdopted){ this.isAdopted = isAdopted; }
 
-    public int getNowMonth(){
-        SimpleDateFormat sdfM = new SimpleDateFormat("MM");
-        Calendar cal = Calendar.getInstance();
-        String nowMonth = sdfM.format(cal.getTime());
-        int m = Integer.valueOf(nowMonth)+1;
-        return m;
-    }
-    public int getNowDay(){
-        SimpleDateFormat sdfD = new SimpleDateFormat("dd");
-        Calendar cal = Calendar.getInstance();
-        String nowDay = sdfD.format(cal.getTime());
-        int d = Integer.valueOf(nowDay);
-        return d;
-    }
     public int getNowYear(){
         SimpleDateFormat sdfY = new SimpleDateFormat("yyyy");
         Calendar cal = Calendar.getInstance();
@@ -79,9 +64,10 @@ public class Data implements Serializable {
     }
     public int setAge(int year,int month,int day){
         Calendar cal = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
         cal.set(year,month,day);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        int now = Integer.parseInt(sdf.format(new Date()));
+        int now = Integer.parseInt(sdf.format(c.getTime()));
         int b = Integer.parseInt(sdf.format(cal.getTime()));
         int age = (now-b)/10000;
         return age;
@@ -93,5 +79,8 @@ public class Data implements Serializable {
         int a = setAge(y,m,d);
         return a;
     }
-
+    public int getMD(){
+        int md = month*100 + day;
+        return md;
+    }
 }
