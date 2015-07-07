@@ -83,7 +83,7 @@ public class DisplayActivity extends Activity {
         SimpleDateFormat sdfD = new SimpleDateFormat("MMdd");
         Calendar cal = Calendar.getInstance();
         String nowMD= sdfD.format(cal.getTime());
-        int md = Integer.valueOf(nowMD);
+        int md = Integer.valueOf(nowMD+100);
         return md;
     }
 }

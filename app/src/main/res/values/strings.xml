@@ -8,7 +8,7 @@
     <string name="fName">苗字:\n</string>
     <string name="your_name">名前:\n</string>
     <string name="parent">両親:\n</string>
-    <string name="number">第何子:\n</string>
+    <string name="number">第何子:</string>
     <string name="birth">\n生年月日:\n</string>
     <string name="family_name">苗字</string>
     <string name="name">名前</string>
