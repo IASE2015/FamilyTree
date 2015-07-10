@@ -45,15 +45,19 @@ public class InputActivity extends Activity {
         EditText fN = (EditText)findViewById(R.id.fName);
         EditText n = (EditText)findViewById(R.id.name);
         EditText p = (EditText)findViewById(R.id.parent);
+        EditText num = (EditText)findViewById(R.id.order);
 
         String fName = fN.getText().toString();
         String name = n.getText().toString();
         String parent = p.getText().toString();
+        String ord = num.getText().toString();
+
 
         DatePicker datePicker = (DatePicker)findViewById(R.id.birth);
         int year = datePicker.getYear();
         int month = datePicker.getMonth();
         int day = datePicker.getDayOfMonth();
+
 
 
         Data data = new Data(fName,name,parent,year,month,day);

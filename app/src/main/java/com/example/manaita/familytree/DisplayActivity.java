@@ -25,6 +25,7 @@ public class DisplayActivity extends Activity {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(W,W);
 
         LinearLayout pInfo = new LinearLayout(this);
+        pInfo.setOrientation(LinearLayout.VERTICAL);
         setContentView(pInfo);
 
         TextView fName = new TextView(this);
@@ -55,7 +56,6 @@ public class DisplayActivity extends Activity {
         pInfo.addView(name,lp);
         pInfo.addView(pName,lp);
         pInfo.addView(number,lp);
-
         pInfo.addView(age,lp);
     }
 
