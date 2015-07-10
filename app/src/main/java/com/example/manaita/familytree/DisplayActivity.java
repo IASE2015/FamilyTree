@@ -3,15 +3,17 @@ package com.example.manaita.familytree;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import android.widget.LinearLayout;
+import android.util.Log;
 
 public class DisplayActivity extends Activity {
+    private final int W = ViewGroup.LayoutParams.WRAP_CONTENT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +22,15 @@ public class DisplayActivity extends Activity {
         Intent intent = getIntent();
         Data data = (Data)intent.getSerializableExtra(InputActivity.EXTRA_MESSAGE);
         // ViewGroup p = new ViewGroup();
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(W,W);
 
-
+        LinearLayout pInfo = new LinearLayout(this);
+        setContentView(pInfo);
 
         TextView fName = new TextView(this);
         TextView name = new TextView(this);
+        TextView pName = new TextView(this);
+        TextView number = new TextView(this);
         fName.setTextSize(40);
         fName.setText(data.getFName());
         name.setTextSize(20);
@@ -32,21 +38,16 @@ public class DisplayActivity extends Activity {
         TextView bir = new TextView(this);
         bir.setTextSize(40);
         bir.setText(String.valueOf(data.getMonth()));
-
-        TextView b = new TextView(this);
-        b.setTextSize(20);
-
-        int age = data.getAge();
-
-        Integer bi  = Integer.valueOf(age);
+        TextView age = new TextView(this);
+        age.setTextSize(20);
+        int a = data.getAge();
+        Integer bi  = Integer.valueOf(a);
         String bit = bi.toString();
-        b.setText(bit);
+        age.setText(bit);
 
-
-        //setContentView(R.id.container);
-
-        setContentView(b);
-
+        pInfo.addView(fName,lp);
+        pInfo.addView(name,lp);
+        pInfo.addView(pName,lp);
     }
 
 
@@ -77,5 +78,8 @@ public class DisplayActivity extends Activity {
         String nowMD= sdfD.format(cal.getTime());
         int md = Integer.valueOf(nowMD);
         return md;
+    }
+    private LinearLayout.LayoutParams createParam(int w,int h){
+        return new LinearLayout.LayoutParams(w,h);
     }
 }
