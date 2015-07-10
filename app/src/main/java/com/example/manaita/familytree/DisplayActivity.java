@@ -35,6 +35,10 @@ public class DisplayActivity extends Activity {
         fName.setText(data.getFName());
         name.setTextSize(20);
         name.setText(data.getName());
+        pName.setTextSize(20);
+        pName.setText(data.getParent());
+        number.setTextSize(40);
+        number.setText(String.valueOf(data.getNumber()));
         TextView bir = new TextView(this);
         bir.setTextSize(40);
         bir.setText(String.valueOf(data.getMonth()));
@@ -45,9 +49,10 @@ public class DisplayActivity extends Activity {
         String bit = bi.toString();
         age.setText(bit);
 
-        pInfo.addView(fName,lp);
+        pInfo.addView(fName, lp);
         pInfo.addView(name,lp);
         pInfo.addView(pName,lp);
+        pInfo.addView(number,lp);
     }
 
 
