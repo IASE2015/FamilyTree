@@ -41,18 +41,26 @@ public class DisplayActivity extends Activity {
         number.setText(String.valueOf(data.getNumber()));
         TextView bir = new TextView(this);
         bir.setTextSize(40);
-        bir.setText(String.valueOf(data.getMonth()));
+        //bir.setText(data.getBirthday);
+
+
         TextView age = new TextView(this);
         age.setTextSize(20);
-        int a = data.getAge();
-        Integer bi  = Integer.valueOf(a);
-        String bit = bi.toString();
-        age.setText(bit);
+        Integer bi  = Integer.valueOf(data.getAge());
+        age.setText(String.valueOf(bi));
+        TextView ag = new TextView(this);
+        ag.setTextSize(20);
+        Integer bs  = Integer.valueOf(data.setAge());
+        ag.setText(String.valueOf(bs));
+
 
         pInfo.addView(fName, lp);
         pInfo.addView(name,lp);
         pInfo.addView(pName,lp);
         pInfo.addView(number,lp);
+
+        pInfo.addView(age,lp);
+        pInfo.addView(ag,lp);
     }
 
 

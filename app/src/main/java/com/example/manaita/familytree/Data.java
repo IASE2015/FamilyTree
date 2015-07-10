@@ -54,7 +54,12 @@ public class Data implements Serializable {
     public void setDay(int day){ this.day = day; }
     public void setMale(boolean male){ this.gender = male; }
     public void setAdopted(boolean isAdopted){ this.isAdopted = isAdopted; }
+    /*public String setBirthday(){
 
+    }
+    public String getBirthday(){
+
+    }*/
     public int getNowYear(){
         SimpleDateFormat sdfY = new SimpleDateFormat("yyyy");
         Calendar cal = Calendar.getInstance();
@@ -62,7 +67,7 @@ public class Data implements Serializable {
         int y = Integer.valueOf(nowYear);
         return y;
     }
-    public int setAge(int year,int month,int day){
+    public int setAge(){
         Calendar cal = Calendar.getInstance();
         Calendar c = Calendar.getInstance();
         cal.set(year,month,day);
@@ -73,14 +78,14 @@ public class Data implements Serializable {
         return age;
     }
     public int getAge(){
+        int a = setAge();
+        return a;
+    }
+    public int[] getBirth(){
+        int[] birth = new int[3];
         int y = getYear();
         int m = getMonth();
         int d = getDay();
-        int a = setAge(y,m,d);
-        return a;
-    }
-    public int getMD(){
-        int md = month*100 + day;
-        return md;
+        return birth;
     }
 }
