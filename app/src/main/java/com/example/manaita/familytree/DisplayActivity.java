@@ -48,10 +48,7 @@ public class DisplayActivity extends Activity {
         age.setTextSize(20);
         Integer bi  = Integer.valueOf(data.getAge());
         age.setText(String.valueOf(bi));
-        TextView ag = new TextView(this);
-        ag.setTextSize(20);
-        Integer bs  = Integer.valueOf(data.setAge());
-        ag.setText(String.valueOf(bs));
+
 
 
         pInfo.addView(fName, lp);
@@ -60,7 +57,6 @@ public class DisplayActivity extends Activity {
         pInfo.addView(number,lp);
 
         pInfo.addView(age,lp);
-        pInfo.addView(ag,lp);
     }
 
 

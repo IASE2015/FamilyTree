@@ -67,7 +67,7 @@ public class Data implements Serializable {
         int y = Integer.valueOf(nowYear);
         return y;
     }
-    public int setAge(){
+    public int getAge(){
         Calendar cal = Calendar.getInstance();
         Calendar c = Calendar.getInstance();
         cal.set(year,month,day);
@@ -77,15 +77,8 @@ public class Data implements Serializable {
         int age = (now-b)/10000;
         return age;
     }
-    public int getAge(){
-        int a = setAge();
-        return a;
-    }
-    public int[] getBirth(){
-        int[] birth = new int[3];
-        int y = getYear();
-        int m = getMonth();
-        int d = getDay();
+    public String getBirth(){
+        String birth = ""+year+month+day;
         return birth;
     }
 }
