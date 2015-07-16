@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="hello">こんにちは！\n情報を入力してください！\n</string>
-    <string name="fName">苗字:\n</string>
+    <string name="fName">苗字:</string>
     <string name="your_name">名前:\n</string>
     <string name="parent">両親:\n</string>
     <string name="number">第何子:</string>
