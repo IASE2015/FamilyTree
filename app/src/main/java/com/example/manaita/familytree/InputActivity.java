@@ -11,7 +11,8 @@ import android.widget.EditText;
 import android.widget.DatePicker;
 
 public class InputActivity extends Activity {
-    public final static String EXTRA_MESSAGE = "com.example.manaita.familytree.PERSON";
+    public final static String P_DATA = "com.example.manaita.familytree.PERSON";
+    //public final static String
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class InputActivity extends Activity {
         String name = n.getText().toString();
         String parent = p.getText().toString();
         String ord = num.getText().toString();
+        Integer order = new Integer(ord);
 
 
         DatePicker datePicker = (DatePicker)findViewById(R.id.birth);
@@ -60,8 +62,8 @@ public class InputActivity extends Activity {
 
 
 
-        Data data = new Data(fName,name,parent,year,month,day);
-        intent.putExtra(EXTRA_MESSAGE, data);
+        Data data = new Data(fName,name,parent,order,year,month,day);
+        intent.putExtra(P_DATA, data);
         startActivity(intent);
     }
 }

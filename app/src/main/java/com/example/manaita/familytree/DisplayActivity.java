@@ -15,16 +15,19 @@ import android.util.Log;
 public class DisplayActivity extends Activity {
     private final int W = ViewGroup.LayoutParams.WRAP_CONTENT;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
+
         Intent intent = getIntent();
-        Data data = (Data)intent.getSerializableExtra(InputActivity.EXTRA_MESSAGE);
+        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
         // ViewGroup p = new ViewGroup();
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(W,W);
 
         LinearLayout pInfo = new LinearLayout(this);
+        //LinearLayout pInfo = (LinearLayout)findViewById(R.id.pInfo);
         pInfo.setOrientation(LinearLayout.VERTICAL);
         setContentView(pInfo);
 

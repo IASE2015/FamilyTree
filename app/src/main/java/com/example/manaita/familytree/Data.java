@@ -14,7 +14,7 @@ public class Data implements Serializable {
     private String fName;
     private String name;
     private String parent;
-    private int number;
+    private int order;
     private int year;
     private int month;
     private int day;
@@ -23,11 +23,11 @@ public class Data implements Serializable {
 
 
 
-    public Data(String fName, String name, String parent,int year,int month,int day){
+    public Data(String fName, String name, String parent,int order,int year,int month,int day){
         this.fName = fName;
         this.name = name;
         this.parent = parent;
-        this.number = number;
+        this.order = order;
         this.year = year;
         this.month = month;
         this.day = day;
@@ -37,7 +37,7 @@ public class Data implements Serializable {
     public String getFName() { return fName; }
     public String getName(){ return name; }
     public String getParent(){ return parent; }
-    public int getNumber(){ return number; }
+    public int getNumber(){ return order; }
     public int getYear(){ return year; }
     public int getMonth(){ return month; }
     public int getDay(){ return day; }
@@ -48,7 +48,7 @@ public class Data implements Serializable {
     public void setFName(String fName){ this.fName = fName; }
     public void setName(String name){ this.name = name; }
     public void setParent(String parent){ this.parent = parent; }
-    public void setNumber(int number){ this.number = number; }
+    public void setNumber(int order){ this.order = order; }
     public void setYear(int year){ this.year = year; }
     public void setMonth(int month){ this.month = month; }
     public void setDay(int day){ this.day = day; }
