@@ -23,7 +23,7 @@ public class Data implements Serializable {
 
 
 
-    public Data(String fName, String name, String parent,int order,int year,int month,int day){
+    public Data(String fName, String name, String parent,int order,int year,int month,int day,boolean gender){
         this.fName = fName;
         this.name = name;
         this.parent = parent;

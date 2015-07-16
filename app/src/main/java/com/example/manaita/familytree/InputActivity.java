@@ -9,6 +9,8 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.EditText;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class InputActivity extends Activity {
     public final static String P_DATA = "com.example.manaita.familytree.PERSON";
@@ -48,6 +50,7 @@ public class InputActivity extends Activity {
         EditText p = (EditText)findViewById(R.id.parent);
         EditText num = (EditText)findViewById(R.id.order);
 
+
         String fName = fN.getText().toString();
         String name = n.getText().toString();
         String parent = p.getText().toString();
@@ -60,9 +63,13 @@ public class InputActivity extends Activity {
         int month = datePicker.getMonth();
         int day = datePicker.getDayOfMonth();
 
+        RadioGroup genderGroup = (RadioGroup)findViewById(R.id.gender_select);
+        boolean isMale=true;
+        if(genderGroup.getCheckedRadioButtonId()==R.id.male){
+            isMale=true;
+        }
 
-
-        Data data = new Data(fName,name,parent,order,year,month,day);
+        Data data = new Data(fName,name,parent,order,year,month,day,isMale);
         intent.putExtra(P_DATA, data);
         startActivity(intent);
     }
