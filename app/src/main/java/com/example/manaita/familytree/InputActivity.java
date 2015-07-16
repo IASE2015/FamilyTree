@@ -73,4 +73,5 @@ public class InputActivity extends Activity {
         intent.putExtra(P_DATA, data);
         startActivity(intent);
     }
+
 }

@@ -23,13 +23,10 @@ public class DisplayActivity extends Activity {
 
         Intent intent = getIntent();
         Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
-        // ViewGroup p = new ViewGroup();
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(W,W);
 
-        LinearLayout pInfo = new LinearLayout(this);
-        //LinearLayout pInfo = (LinearLayout)findViewById(R.id.pInfo);
-        pInfo.setOrientation(LinearLayout.VERTICAL);
-        setContentView(pInfo);
+        LinearLayout pInfo = (LinearLayout)findViewById(R.id.vGroup);
+
 
         TextView fName = new TextView(this);
         TextView name = new TextView(this);
@@ -37,19 +34,19 @@ public class DisplayActivity extends Activity {
         TextView number = new TextView(this);
         fName.setTextSize(40);
         fName.setText(data.getFName());
-        name.setTextSize(20);
+        name.setTextSize(40);
         name.setText(data.getName());
-        pName.setTextSize(20);
+        pName.setTextSize(40);
         pName.setText(data.getParent());
         number.setTextSize(40);
         number.setText(String.valueOf(data.getNumber()));
         TextView bir = new TextView(this);
         bir.setTextSize(40);
-        //bir.setText(data.getBirthday);
+        bir.setText(data.getBirth());
 
 
         TextView age = new TextView(this);
-        age.setTextSize(20);
+        age.setTextSize(40);
         Integer bi  = Integer.valueOf(data.getAge());
         age.setText(String.valueOf(bi));
 
@@ -60,6 +57,10 @@ public class DisplayActivity extends Activity {
         pInfo.addView(pName,lp);
         pInfo.addView(number,lp);
         pInfo.addView(age,lp);
+
+        //fam.addView(pInfo);
+        //setContentView(pInfo);
+
     }
 
 

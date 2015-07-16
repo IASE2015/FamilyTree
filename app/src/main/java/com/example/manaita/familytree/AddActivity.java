@@ -1,11 +1,14 @@
 package com.example.manaita.familytree;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class AddActivity extends Activity {
@@ -17,6 +20,14 @@ public class AddActivity extends Activity {
         setContentView(R.layout.activity_add);
 
         gestDetect = new GestureDetector(this,new MySimpleOnGestureListener());
+
+
+        RelativeLayout fam = new RelativeLayout(this);
+        Intent intent = getIntent();
+        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
+        TextView main = new TextView(this);
+        main.setText(data.getFName()+" "+data.getName());
+        fam.addView(main);
     }
 
 

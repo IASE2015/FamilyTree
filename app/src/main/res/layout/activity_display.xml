@@ -4,16 +4,35 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.manaita.familytree.DisplayActivity">
+    tools:context="com.example.manaita.familytree.DisplayActivity"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/a_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:text="@string/fName" android:textSize="40sp"/>
+        <TextView android:text="@string/your_name" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:textSize="40sp"/>
+        <TextView android:text="@string/parent" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="40sp"/>
+        <TextView android:text="@string/number" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="40sp"/>
+        <TextView android:text="@string/birth" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="40sp"/>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/vGroup"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/fName"/>
-<LinearLayout
-    android:id="@+id/pInfo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"></LinearLayout>
-
-
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_toRightOf="@id/a_layout">
+    </LinearLayout>
+    <Button
+        android:id="@+id/add"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
 </RelativeLayout>
