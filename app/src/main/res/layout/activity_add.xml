@@ -11,7 +11,16 @@
         <TableLayout
             android:id="@+id/family_tree"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TableLayout>
+            android:layout_height="wrap_content">
+            <TableRow>
+                <include layout="@layout/add_person"
+                    android:id="@+id/mother"/>
+                <ImageView android:src="@drawable/y_bar"/>
+                <include layout="@layout/add_person"
+                    android:id="@+id/father"/>
+            </TableRow>
+            <include layout="@layout/layout_nuclear"/>
+            </TableLayout>
     </ScrollView>
 
 </RelativeLayout>
