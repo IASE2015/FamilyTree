@@ -21,6 +21,13 @@
             </TableRow>
             <include layout="@layout/layout_nuclear"/>
             </TableLayout>
+        <Button
+            android:id="@+id/add"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:onClick="toAddActivity"
+            android:text="@string/add"
+            android:layout_above="@+id/tree"/>
     </ScrollView>
 
 </RelativeLayout>

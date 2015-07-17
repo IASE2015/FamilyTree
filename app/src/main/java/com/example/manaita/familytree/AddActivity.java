@@ -32,7 +32,7 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
         TextView main = new TextView(this);
         main.setText(data.getFName()+" "+data.getName());
         fam.addView(main);
-        setContentView(fam);
+        //setContentView(fam);
 
         ViewGroup famtree = (ViewGroup)findViewById(R.id.family_tree);
 
