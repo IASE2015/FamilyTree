@@ -34,10 +34,17 @@
         android:layout_toRightOf="@id/a_layout">
     </LinearLayout>
     <Button
-        android:id="@+id/add"
+        android:id="@+id/tree"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_alignParentBottom="true"
         android:onClick="toAddActivity"
         android:text="@string/family_tree"/>
+    <Button
+        android:id="@+id/add"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:onClick="toAddActivity"
+        android:text="@string/add"
+        android:layout_above="@+id/tree"/>
 </RelativeLayout>

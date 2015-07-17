@@ -24,7 +24,7 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        gestDetect = new GestureDetector(this,new MySimpleOnGestureListener());
+        //gestDetect = new GestureDetector(this,new MySimpleOnGestureListener());
 
         RelativeLayout fam = new RelativeLayout(this);
         Intent intent = getIntent();

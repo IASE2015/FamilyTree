@@ -25,4 +25,5 @@
     <string name="title_activity_display">DisplayActivity</string>
     <string name="title_activity_add">AddActivity</string>
     <string name="family_tree">家系図を見る</string>
+    <string name="add">他の人を追加する</string>
 </resources>
