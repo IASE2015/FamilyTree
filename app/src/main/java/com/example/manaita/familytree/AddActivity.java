@@ -9,10 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View.OnTouchListener;
+import android.graphics.Color;
 
 
-public class AddActivity extends Activity {
+
+public class AddActivity extends Activity /*implements onTouchListener*/{
     private GestureDetector gestDetect;
+
+    Canvas canvas;
+    Paint paint;
+    float x,y;
+    int w,h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +31,22 @@ public class AddActivity extends Activity {
 
         gestDetect = new GestureDetector(this,new MySimpleOnGestureListener());
 
-
         RelativeLayout fam = new RelativeLayout(this);
         Intent intent = getIntent();
-        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
+        Data data = (Data)intent.getSerializableExtra(DisplayActivity.P_INFO);
         TextView main = new TextView(this);
         main.setText(data.getFName()+" "+data.getName());
         fam.addView(main);
+        setContentView(fam);
+
+        /*w=1000;
+        h=1000;
+        canvas = new Canvas();
+        paint.setStrokeWidth(5);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        canvas.drawColor(Color.WHITE);*/
     }
 
 

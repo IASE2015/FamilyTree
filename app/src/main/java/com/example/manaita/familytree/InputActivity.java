@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.database.sqlite.SQLiteDatabase;
+import android.content.ContentValues;
+
 
 public class InputActivity extends Activity {
     public final static String P_DATA = "com.example.manaita.familytree.PERSON";
@@ -69,9 +72,16 @@ public class InputActivity extends Activity {
             isMale=true;
         }
 
+        FamilyDBHelper fam = new FamilyDBHelper(this);
+        SQLiteDatabase db = fam.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("family",fName);
+
         Data data = new Data(fName,name,parent,order,year,month,day,isMale);
         intent.putExtra(P_DATA, data);
         startActivity(intent);
     }
+    void saveData(){
 
+    }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import java.text.SimpleDateFormat;
@@ -14,6 +15,7 @@ import android.util.Log;
 
 public class DisplayActivity extends Activity {
     private final int W = ViewGroup.LayoutParams.WRAP_CONTENT;
+    public final static String P_INFO = "com.example.manaita.familytree.P_INFO";
 
 
     @Override
@@ -21,12 +23,13 @@ public class DisplayActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-        Intent intent = getIntent();
-        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
+        /*Intent intent = getIntent();
+        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);*/
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(W,W);
 
         LinearLayout pInfo = (LinearLayout)findViewById(R.id.vGroup);
-
+        Intent intent = getIntent();
+        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
 
         TextView fName = new TextView(this);
         TextView name = new TextView(this);
@@ -94,5 +97,13 @@ public class DisplayActivity extends Activity {
     }
     private LinearLayout.LayoutParams createParam(int w,int h){
         return new LinearLayout.LayoutParams(w,h);
+    }
+    public void toAddActivity(View view){
+        Intent intent = getIntent();
+        Data data = (Data)intent.getSerializableExtra(InputActivity.P_DATA);
+        Intent i = new Intent(this,AddActivity.class);
+        i.putExtra(P_INFO, data);
+        startActivity(i);
+
     }
 }

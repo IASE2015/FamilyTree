@@ -78,7 +78,7 @@ public class Data implements Serializable {
         return age;
     }
     public String getBirth(){
-        String birth = ""+year+month+day;
+        String birth = year+"年"+month+"月"+day+"日";
         return birth;
     }
 }
