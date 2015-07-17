@@ -19,9 +19,9 @@
             android:layout_height="wrap_content" android:textSize="40sp"/>
         <TextView android:text="@string/number" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="40sp"/>
-        <TextView android:text="@string/age" android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:textSize="40sp"/>
         <TextView android:text="@string/birth" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="40sp"/>
+        <TextView android:text="@string/age" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="40sp"/>
     </LinearLayout>
 
