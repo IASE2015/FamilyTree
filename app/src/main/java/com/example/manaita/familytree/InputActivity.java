@@ -72,10 +72,10 @@ public class InputActivity extends Activity {
             isMale=true;
         }
 
-        FamilyDBHelper fam = new FamilyDBHelper(this);
+        /*FamilyDBHelper fam = new FamilyDBHelper(this);
         SQLiteDatabase db = fam.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("family",fName);
+        values.put("family",fName);*/
 
         Data data = new Data(fName,name,parent,order,year,month,day,isMale);
         intent.putExtra(P_DATA, data);

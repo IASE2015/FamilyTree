@@ -3,6 +3,7 @@ package com.example.manaita.familytree;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
+
 /**
  * Created by tazio on 2015/07/17.
  */

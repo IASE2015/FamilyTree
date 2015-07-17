@@ -9,20 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View.OnTouchListener;
-import android.graphics.Color;
+import android.view.ViewGroup;
+
 
 
 
 public class AddActivity extends Activity /*implements onTouchListener*/{
     private GestureDetector gestDetect;
 
-    Canvas canvas;
-    Paint paint;
-    float x,y;
-    int w,h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +34,10 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
         fam.addView(main);
         setContentView(fam);
 
-        /*w=1000;
-        h=1000;
-        canvas = new Canvas();
-        paint.setStrokeWidth(5);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        canvas.drawColor(Color.WHITE);*/
+        ViewGroup famtree = (ViewGroup)findViewById(R.id.family_tree);
+
+        
+
     }
 
 
