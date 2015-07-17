@@ -59,6 +59,7 @@ public class DisplayActivity extends Activity {
         pInfo.addView(name,lp);
         pInfo.addView(pName,lp);
         pInfo.addView(number,lp);
+        pInfo.addView(bir,lp);
         pInfo.addView(age,lp);
 
         //fam.addView(pInfo);

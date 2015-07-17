@@ -10,6 +10,7 @@
     <string name="parent">両親:</string>
     <string name="number">第何子:</string>
     <string name="birth">生年月日:</string>
+    <string name="age">年齢:</string>
     <string name="family_name">苗字</string>
     <string name="name">名前</string>
     <string name="parent_name">親の名前</string>
@@ -23,5 +24,5 @@
     <string name="button_send">Send</string>
     <string name="title_activity_display">DisplayActivity</string>
     <string name="title_activity_add">AddActivity</string>
-
+    <string name="family_tree">家系図を見る</string>
 </resources>
