@@ -24,6 +24,10 @@
             android:name=".AddActivity"
             android:label="@string/title_activity_add" >
         </activity>
+        <activity
+            android:name=".AnotherFamilyActivity"
+            android:label="@string/title_activity_another_family" >
+        </activity>
     </application>
 
 </manifest>

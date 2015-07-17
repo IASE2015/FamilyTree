@@ -27,4 +27,6 @@
     <string name="family_tree">家系図を見る</string>
     <string name="add">兄弟を追加する</string>
     <string name="add_s">＋</string>
+    <string name="title_activity_another_family">AnotherFamilyActivity</string>
+
 </resources>

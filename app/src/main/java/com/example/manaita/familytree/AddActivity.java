@@ -7,17 +7,18 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 
 
 
 
-public class AddActivity extends Activity /*implements onTouchListener*/{
+public class AddActivity extends Activity implements View.OnClickListener {
     private GestureDetector gestDetect;
-
+    public final static String P_ISFATHER = "com.example.manaita.familytree.ISFATHER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,17 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
 
         ViewGroup famtree = (ViewGroup)findViewById(R.id.family_tree);
 
+        int f = 0;
 
+        Button add = (Button)findViewById(R.id.add);
+        add.setOnClickListener(this);
+        Button mAdd = (Button)findViewById(R.id.mother);
+        mAdd.setOnClickListener(this);
+        Button fAdd = (Button)findViewById(R.id.father);
+        fAdd.setOnClickListener(this);
 
+        Button info = (Button)findViewById(R.id.hero);
+        //add.setOnClickListener(this);
 
     }
 
@@ -63,7 +73,30 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
 
         return super.onOptionsItemSelected(item);
     }
-    private class MySimpleOnGestureListener extends GestureDetector.SimpleOnGestureListener {
 
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(this,InputActivity.class);
+        int f=0;
+        int k = view.getId();
+        if(k==R.id.father)
+            intent.putExtra(P_ISFATHER, 0);
+        if(k==R.id.mother)
+            intent.putExtra(P_ISFATHER, 1);
+        startActivity(intent);
+    }
+    public void createFather(View view) {
+        Intent intent = new Intent(this,AnotherFamilyActivity.class);
+        intent.putExtra(P_ISFATHER,0);
+        startActivity(intent);
+    }
+    public void createMother(View view) {
+        Intent intent = new Intent(this,AnotherFamilyActivity.class);
+        intent.putExtra(P_ISFATHER,1);
+        startActivity(intent);
+    }
+    public void infoPerson(View view){
+        Intent intent = new Intent(this,DisplayActivity.class);
+        startActivity(intent);
     }
 }

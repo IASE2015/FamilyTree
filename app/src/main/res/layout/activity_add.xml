@@ -8,26 +8,36 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TableLayout
             android:id="@+id/family_tree"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
             <TableRow>
                 <include layout="@layout/add_person"
                     android:id="@+id/mother"/>
                 <ImageView android:src="@drawable/y_bar"/>
                 <include layout="@layout/add_person"
-                    android:id="@+id/father"/>
+                    android:id="@+id/father"
+                    />
+            </TableRow>
+            <TableRow>
+                <Button android:id="@+id/hero"
+                    android:onClick="infoPerson"/>
             </TableRow>
             <include layout="@layout/layout_nuclear"/>
-            </TableLayout>
-        <Button
-            android:id="@+id/add"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:onClick="toAddActivity"
-            android:text="@string/add"
-            android:layout_above="@+id/tree"/>
-    </ScrollView>
+        </TableLayout>
 
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/add"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="@string/add"
+        android:layout_above="@+id/tree"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
