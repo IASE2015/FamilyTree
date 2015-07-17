@@ -36,7 +36,7 @@ public class AddActivity extends Activity /*implements onTouchListener*/{
 
         ViewGroup famtree = (ViewGroup)findViewById(R.id.family_tree);
 
-        
+
 
     }
 
